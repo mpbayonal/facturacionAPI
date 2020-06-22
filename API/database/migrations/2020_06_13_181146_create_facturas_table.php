@@ -14,8 +14,12 @@ class CreateFacturasTable extends Migration
     public function up()
     {
         Schema::create('facturas', function (Blueprint $table) {
-            $table->id();
+            $table->increments("id");
+            $table->bigInteger('NumeroConsecutivo');
+            $table->date('fecha');
+            $table->bigInteger('valorTotal');
             $table->timestamps();
+
         });
     }
 
